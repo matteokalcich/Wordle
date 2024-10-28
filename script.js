@@ -78,3 +78,19 @@ function showWord(insertedWord) {
         }
     }
 }
+
+
+function showKeyboard(){
+
+    let hideElement = document.getElementById('keyboard');
+
+    if(getComputedStyle(hideElement).display == 'flex'){
+
+        hideElement.style.display = 'none';
+
+    } else {
+
+        hideElement.style.display = 'flex';
+
+    }
+}

@@ -24,3 +24,33 @@ body{
 
     margin-top: 3vh;
 }
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.key {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 2px;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.key:hover {
+    background-color: #e0e0e0;
+}
+
+.special {
+    flex: 1;
+    margin: 0 5px;
+}
