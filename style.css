@@ -16,4 +16,11 @@ body{
 
     border-color: black;
     border-width: 1px;
+
+    text-align: center;
+}
+
+.inputArea{
+
+    margin-top: 3vh;
 }
