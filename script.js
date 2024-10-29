@@ -1,6 +1,9 @@
-let parola = 'SEDIA';
+let parola = 'GATTO';
 let currentRow = 0;
+let currentRowKey = 0;
+let currentCol = 0;
 let allRow = 6;
+let allCol = 5;
 
 window.onload = initPage;
 
@@ -48,7 +51,7 @@ function initPage() {
 
     for (let row = 0; row < allRow; row++) {
 
-        for (let col = 0; col < 5; col++) {
+        for (let col = 0; col < allCol; col++) {
 
             document.getElementById('R' + row + 'C' + col).disabled = true;
 
@@ -109,8 +112,81 @@ function showKeyboard() {
     }
 }
 
-function keyboardKey() {
+function showKey(valore) {
+
+    const button = document.getElementById('R' + currentRowKey + 'C' + currentCol);
+
+
+    button.innerHTML = '<p>' + valore + '</p';
+
+    button.disabled = false;
+
+    if (valore == parola[currentCol]) {
+
+        button.style.backgroundColor = 'green';
+        return;
+
+    } else if (parola.includes(valore)) {
+
+        button.style.backgroundColor = 'yellow';
+        return;
+
+    } else {
+
+        button.style.backgroundColor = 'gray';
+        return;
+
+    }
 
 
 
+
+}
+
+/*function checkWinKey() {
+
+    let t;
+    
+    for (let i = 0; i < allCol; i++){
+
+        let btn = document.getElementById('R' + currentRowKey + 'C' + i);
+
+        if(btn)
+    }
+}*/
+
+function keyboardKey(valore) {
+
+    let key = document.getElementsByClassName('key');
+
+
+    for (let i = 0; i < key.length; i++) {
+
+        if (key.item(i).id == ('key' + valore)) {
+
+            console.log('Elemento premuto: ' + valore);
+
+            if (currentCol >= allCol) {
+
+                //checkWinKey();
+                
+                currentCol = 0;
+
+                currentRowKey++;
+            }
+
+            if (currentRowKey >= allRow) {
+                
+                alert('Hai perso! La parola era: ' + parola);
+
+                initPage();
+            }
+
+            showKey(valore);
+
+            currentCol++;
+
+
+        }
+    }
 }
