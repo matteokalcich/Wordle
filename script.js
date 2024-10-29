@@ -54,6 +54,8 @@ function initPage() {
         for (let col = 0; col < allCol; col++) {
 
             document.getElementById('R' + row + 'C' + col).disabled = true;
+            document.getElementById('R' + row + 'C' + col).innerText = '';
+            document.getElementById('R' + row + 'C' + col).style.backgroundColor = 'white';
 
         }
     }
@@ -65,7 +67,7 @@ function showWord(insertedWord) {
 
         const button = document.getElementById('R' + currentRow + 'C' + i);
 
-        button.innerHTML = '<p>' + insertedWord[i] + '</p';
+        button.innerText = insertedWord[i];
 
         button.disabled = false;
 
@@ -117,7 +119,7 @@ function showKey(valore) {
     const button = document.getElementById('R' + currentRowKey + 'C' + currentCol);
 
 
-    button.innerHTML = '<p>' + valore + '</p';
+    button.innerText = valore;
 
     button.disabled = false;
 
@@ -138,22 +140,20 @@ function showKey(valore) {
 
     }
 
-
-
-
 }
 
-/*function checkWinKey() {
-
-    let t;
+function checkWinKey() {
     
     for (let i = 0; i < allCol; i++){
 
-        let btn = document.getElementById('R' + currentRowKey + 'C' + i);
-
-        if(btn)
+        if (!document.getElementById('R' + currentRowKey + 'C' + i).textContent == parola[i]) {
+            
+            return false;
+        } 
     }
-}*/
+
+    return true;
+}
 
 function keyboardKey(valore) {
 
@@ -168,7 +168,10 @@ function keyboardKey(valore) {
 
             if (currentCol >= allCol) {
 
-                //checkWinKey();
+                if (checkWinKey()) {
+                    
+                    alert('HAI VINTO');
+                }
                 
                 currentCol = 0;
 
