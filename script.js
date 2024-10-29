@@ -1,16 +1,17 @@
 let parola = 'SEDIA';
 let currentRow = 0;
+let allRow = 6;
 
-window.onload = initGrid;
+window.onload = initPage;
 
 
 function sendWord() {
 
-    
+
     let insertedWord = document.getElementById('wordToSend');
 
     if (insertedWord.value.length != 5) {
-        
+
         alert('ERRORE: inserire una parola con 5 lettere');
 
         insertedWord.value = '';
@@ -23,7 +24,7 @@ function sendWord() {
     if (insertedWord.value.toUpperCase() == parola) {
 
         alert('HAI VINTO!');
-        
+
         insertedWord.value = '';
 
         document.getElementById('wordToSend').disabled = true;
@@ -33,7 +34,7 @@ function sendWord() {
 
     currentRow++;
 
-    if (currentRow >= 5) {
+    if (currentRow >= allRow) {
 
         alert('Hai perso! La parola era: ' + parola);
 
@@ -41,14 +42,16 @@ function sendWord() {
     }
 }
 
-function initGrid(){
+function initPage() {
 
-    for(let row=0; row<5; row++){
 
-        for(let col=0; col<5; col++){
+
+    for (let row = 0; row < allRow; row++) {
+
+        for (let col = 0; col < 5; col++) {
 
             document.getElementById('R' + row + 'C' + col).disabled = true;
-        
+
         }
     }
 }
@@ -80,17 +83,34 @@ function showWord(insertedWord) {
 }
 
 
-function showKeyboard(){
+function showKeyboard() {
 
-    let hideElement = document.getElementById('keyboard');
+    let keyboard = document.getElementById('keyboard');
 
-    if(getComputedStyle(hideElement).display == 'flex'){
+    let inputArea = document.getElementById('inputArea');
 
-        hideElement.style.display = 'none';
+    let textButton = document.getElementById('showKeyboardTextArea');
+
+    if (getComputedStyle(keyboard).display == 'flex') {
+
+        keyboard.style.display = 'none';
+
+        inputArea.style.display = 'flex';
+
+        textButton.innerHTML = '<p>' + 'Mostra tasiera' + '</p>';
 
     } else {
 
-        hideElement.style.display = 'flex';
+        keyboard.style.display = 'flex';
+        inputArea.style.display = 'none';
+
+        textButton.innerHTML = '<p>' + 'Mostra text area' + '</p>';
 
     }
+}
+
+function keyboardKey() {
+
+
+
 }

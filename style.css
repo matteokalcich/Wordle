@@ -1,4 +1,4 @@
-body{
+body {
 
     display: flex;
 
@@ -9,7 +9,7 @@ body{
     align-items: center;
 }
 
-.cellaBtn{
+.cellaBtn {
 
     height: 50px;
     width: 50px;
@@ -20,13 +20,15 @@ body{
     text-align: center;
 }
 
-.inputArea{
+#inputArea {
+
+    display: flex;
 
     margin-top: 3vh;
 }
 
 #keyboard {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 </head>
+
 <body>
 
     <table>
@@ -45,49 +47,58 @@
             <td><button class="cellaBtn" id="R4C3" value="" disabled></button></td>
             <td><button class="cellaBtn" id="R4C4" value="" disabled></button></td>
         </tr>
+        <tr>
+            <td><button class="cellaBtn" id="R5C0" value="" disabled></button></td>
+            <td><button class="cellaBtn" id="R5C1" value="" disabled></button></td>
+            <td><button class="cellaBtn" id="R5C2" value="" disabled></button></td>
+            <td><button class="cellaBtn" id="R5C3" value="" disabled></button></td>
+            <td><button class="cellaBtn" id="R5C4" value="" disabled></button></td>
+        </tr>
     </table>
 
-    <div class="inputArea">
+    <div id="inputArea">
 
-        <input type="text" id="wordToSend"/>
+        <input type="text" id="wordToSend" />
         <button onclick="sendWord()">Send</button>
     </div>
 
-    <button onclick="showKeyboard()"><p>Mostra tastiera</p></button>
+    <button id="showKeyboardTextArea" onclick="showKeyboard()">
+        <p>Mostra tastiera</p>
+    </button>
 
     <div id="keyboard">
 
         <div class="row">
-            <button class="key">Q</button>
-            <button class="key">W</button>
-            <button class="key">E</button>
-            <button class="key">R</button>
-            <button class="key">T</button>
-            <button class="key">Y</button>
-            <button class="key">U</button>
-            <button class="key">I</button>
-            <button class="key">O</button>
-            <button class="key">P</button>
+            <button onclick="keyboardKey()" class="key" id="keyQ">Q</button>
+            <button onclick="keyboardKey()" class="key" id="keyW">W</button>
+            <button onclick="keyboardKey()" class="key" id="keyE">E</button>
+            <button onclick="keyboardKey()" class="key" id="keyR">R</button>
+            <button onclick="keyboardKey()" class="key" id="keyT">T</button>
+            <button onclick="keyboardKey()" class="key" id="keyY">Y</button>
+            <button onclick="keyboardKey()" class="key" id="keyU">U</button>
+            <button onclick="keyboardKey()" class="key" id="keyI">I</button>
+            <button onclick="keyboardKey()" class="key" id="keyO">O</button>
+            <button onclick="keyboardKey()" class="key" id="keyP">P</button>
         </div>
         <div class="row">
-            <button class="key">A</button>
-            <button class="key">S</button>
-            <button class="key">D</button>
-            <button class="key">F</button>
-            <button class="key">G</button>
-            <button class="key">H</button>
-            <button class="key">J</button>
-            <button class="key">K</button>
-            <button class="key">L</button>
+            <button onclick="keyboardKey()" class="key" id="keyA">A</button>
+            <button onclick="keyboardKey()" class="key" id="keyS">S</button>
+            <button onclick="keyboardKey()" class="key" id="keyD">D</button>
+            <button onclick="keyboardKey()" class="key" id="keyF">F</button>
+            <button onclick="keyboardKey()" class="key" id="keyG">G</button>
+            <button onclick="keyboardKey()" class="key" id="keyH">H</button>
+            <button onclick="keyboardKey()" class="key" id="keyJ">J</button>
+            <button onclick="keyboardKey()" class="key" id="keyK">K</button>
+            <button onclick="keyboardKey()" class="key" id="keyL">L</button>
         </div>
         <div class="row">
-            <button class="key">Z</button>
-            <button class="key">X</button>
-            <button class="key">C</button>
-            <button class="key">V</button>
-            <button class="key">B</button>
-            <button class="key">N</button>
-            <button class="key">M</button>
+            <button onclick="keyboardKey()" class="key" id="keyZ">Z</button>
+            <button onclick="keyboardKey()" class="key" id="keyX">X</button>
+            <button onclick="keyboardKey()" class="key" id="keyC">C</button>
+            <button onclick="keyboardKey()" class="key" id="keyV">V</button>
+            <button onclick="keyboardKey()" class="key" id="keyB">B</button>
+            <button onclick="keyboardKey()" class="key" id="keyN">N</button>
+            <button onclick="keyboardKey()" class="key" id="keyM">M</button>
         </div>
         <div class="row">
             <button class="key special">Backspace</button>
@@ -95,9 +106,9 @@
         </div>
     </div>
 
-    
-    
-    
+
+
+
 
 </body>
 
