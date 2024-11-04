@@ -1,4 +1,4 @@
-let parola = 'GATTO';
+let parola = 'TESTO';
 let currentRow = 0;
 let currentRowKey = 0;
 let currentCol = 0;
@@ -8,8 +8,8 @@ let allCol = 5;
 window.onload = initPage;
 
 
-function sendWord() {
 
+function sendWord() {
 
     let insertedWord = document.getElementById('wordToSend');
 
@@ -49,6 +49,7 @@ function initPage() {
 
 
 
+
     for (let row = 0; row < allRow; row++) {
 
         for (let col = 0; col < allCol; col++) {
@@ -62,6 +63,7 @@ function initPage() {
 }
 
 function showWord(insertedWord) {
+
 
     for (let i = 0; i < insertedWord.length; i++) {
 
@@ -79,117 +81,21 @@ function showWord(insertedWord) {
 
             button.style.backgroundColor = 'yellow';
 
+            for(let j=0; j<insertedWord.length; j++){
+
+                if(insertedWord[i] == insertedWord[j]){
+
+                    button.style.backgroundColor = 'gray';
+                    
+                }
+            }
+
         } else {
 
             button.style.backgroundColor = 'gray';
 
         }
     }
-}
 
-
-function showKeyboard() {
-
-    let keyboard = document.getElementById('keyboard');
-
-    let inputArea = document.getElementById('inputArea');
-
-    let textButton = document.getElementById('showKeyboardTextArea');
-
-    if (getComputedStyle(keyboard).display == 'flex') {
-
-        keyboard.style.display = 'none';
-
-        inputArea.style.display = 'flex';
-
-        textButton.innerHTML = '<p>' + 'Mostra tasiera' + '</p>';
-
-    } else {
-
-        keyboard.style.display = 'flex';
-        inputArea.style.display = 'none';
-
-        textButton.innerHTML = '<p>' + 'Mostra text area' + '</p>';
-
-    }
-}
-
-function showKey(valore) {
-
-    const button = document.getElementById('R' + currentRowKey + 'C' + currentCol);
-
-
-    button.innerText = valore;
-
-    button.disabled = false;
-
-    if (valore == parola[currentCol]) {
-
-        button.style.backgroundColor = 'green';
-        return;
-
-    } else if (parola.includes(valore)) {
-
-        button.style.backgroundColor = 'yellow';
-        return;
-
-    } else {
-
-        button.style.backgroundColor = 'gray';
-        return;
-
-    }
-
-}
-
-function checkWinKey() {
     
-    for (let i = 0; i < allCol; i++){
-
-        if (!document.getElementById('R' + currentRowKey + 'C' + i).textContent == parola[i]) {
-            
-            return false;
-        } 
-    }
-
-    return true;
-}
-
-function keyboardKey(valore) {
-
-    let key = document.getElementsByClassName('key');
-
-
-    for (let i = 0; i < key.length; i++) {
-
-        if (key.item(i).id == ('key' + valore)) {
-
-            console.log('Elemento premuto: ' + valore);
-
-            if (currentCol >= allCol) {
-
-                if (checkWinKey()) {
-                    
-                    alert('HAI VINTO');
-                }
-                
-                currentCol = 0;
-
-                currentRowKey++;
-            }
-
-            if (currentRowKey >= allRow) {
-                
-                alert('Hai perso! La parola era: ' + parola);
-
-                initPage();
-            }
-
-            showKey(valore);
-
-            currentCol++;
-
-
-        }
-    }
 }
