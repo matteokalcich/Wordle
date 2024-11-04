@@ -76,3 +76,23 @@ body {
     flex: 1;
     margin: 0 5px;
 }
+
+.flip {
+    animation: flip 500ms ease forwards;
+  }
+  
+  @keyframes flip {
+    0% {
+      transform: scaleY(1);
+    }
+  
+    50% {
+      background: white;
+      transform: scaleY(0);
+    }
+  
+    100% {
+      transform: scaleY(1);
+      background: green;
+    }
+  }

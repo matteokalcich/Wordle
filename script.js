@@ -1,4 +1,4 @@
-let parola = 'TESTO';
+let parola = 'CORDA';
 let currentRow = 0;
 let currentRowKey = 0;
 let currentCol = 0;
@@ -7,9 +7,29 @@ let allCol = 5;
 
 window.onload = initPage;
 
+function applyFlip() {
+    var tiles = document.getElementsByClassName('cellaBtn');
+    var tilesArray = Array.from(tiles);
+    tilesArray.map(function (tile, i) {
+      tile.classList.add('flip');
+      tile.style.animationDelay = `${i * 100}ms`;
+    });
+}
+
+  function rotazione(){
+
+    var tiles = insertedWord;
+    var tilesArray = Array.from(tiles);
+    tilesArray.map(function (tile, i) {
+      tile.classList.add('flip');
+      tile.style.animationDelay = `${i * 100}ms`;
+    });
+  }
 
 
 function sendWord() {
+
+    //rotazione();
 
     let insertedWord = document.getElementById('wordToSend');
 
