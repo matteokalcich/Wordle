@@ -20,6 +20,8 @@ body {
 
     border-radius: 30%;
 
+    
+
 
     background-color: white;
 
@@ -28,14 +30,25 @@ body {
 
 #inputArea {
 
-    display: flex;
+    display: inline;
 
     margin-top: 3vh;
+
 }
 
-#keyboard {
-    display: none;
-    flex-direction: column;
+#wordToSend{
+
+    border-width: 1px;
+}
+
+#wordToSend:focus{
+
+    border-width: none;
+}
+
+#inputArea button, input{
+
+    box-shadow: 3px 3px 5px;
 }
 
 .row {
@@ -44,38 +57,6 @@ body {
     margin-bottom: 10px;
 }
 
-#showKeyboardTextArea{
-
-    background-color: white;
-
-    margin-top: 4vh;
-
-    border-color: black;
-    border-width: 1px;
-
-    border-radius: 100%;
-
-    box-shadow: 2px 3px;
-}
-
-.key {
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 2px;
-    font-size: 18px;
-    transition: background-color 0.2s;
-}
-
-.key:hover {
-    background-color: #e0e0e0;
-}
-
-.special {
-    flex: 1;
-    margin: 0 5px;
-}
 
 .flip {
     animation: flip 500ms ease forwards;
