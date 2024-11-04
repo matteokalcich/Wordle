@@ -7,7 +7,6 @@ let allCol = 5;
 
 window.onload = initPage;
 
-
 function sendWord() {
 
 
@@ -73,13 +72,22 @@ function showWord(insertedWord) {
 
         if (insertedWord[i] == parola[i]) {
 
+            button.classList.add('flip');
+            button.style.animationDelay = `${i * 100}ms`;
+
             button.style.backgroundColor = 'green';
 
         } else if (parola.includes(insertedWord[i])) {
 
+            button.classList.add('flip');
+            button.style.animationDelay = `${i * 100}ms`;
+
             button.style.backgroundColor = 'yellow';
 
         } else {
+
+            button.classList.add('flip');
+            button.style.animationDelay = `${i * 100}ms`;
 
             button.style.backgroundColor = 'gray';
 
