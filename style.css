@@ -46,11 +46,6 @@ body {
     border-width: none;
 }
 
-#inputArea button, input{
-
-    box-shadow: 3px 3px 5px;
-}
-
 .row {
     display: flex;
     justify-content: center;
