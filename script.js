@@ -1,4 +1,4 @@
-let parola = 'CORDA';
+let parola = 'PROVA';
 let currentRow = 0;
 let currentRowKey = 0;
 let currentCol = 0;
@@ -7,29 +7,9 @@ let allCol = 5;
 
 window.onload = initPage;
 
-function applyFlip() {
-    var tiles = document.getElementsByClassName('cellaBtn');
-    var tilesArray = Array.from(tiles);
-    tilesArray.map(function (tile, i) {
-      tile.classList.add('flip');
-      tile.style.animationDelay = `${i * 100}ms`;
-    });
-}
-
-  function rotazione(){
-
-    var tiles = insertedWord;
-    var tilesArray = Array.from(tiles);
-    tilesArray.map(function (tile, i) {
-      tile.classList.add('flip');
-      tile.style.animationDelay = `${i * 100}ms`;
-    });
-  }
-
 
 function sendWord() {
 
-    //rotazione();
 
     let insertedWord = document.getElementById('wordToSend');
 
@@ -69,7 +49,6 @@ function initPage() {
 
 
 
-
     for (let row = 0; row < allRow; row++) {
 
         for (let col = 0; col < allCol; col++) {
@@ -83,7 +62,6 @@ function initPage() {
 }
 
 function showWord(insertedWord) {
-
 
     for (let i = 0; i < insertedWord.length; i++) {
 
@@ -101,15 +79,6 @@ function showWord(insertedWord) {
 
             button.style.backgroundColor = 'yellow';
 
-            for(let j=0; j<insertedWord.length; j++){
-
-                if(insertedWord[i] == insertedWord[j]){
-
-                    button.style.backgroundColor = 'gray';
-                    
-                }
-            }
-
         } else {
 
             button.style.backgroundColor = 'gray';
@@ -117,5 +86,4 @@ function showWord(insertedWord) {
         }
     }
 
-    
 }
